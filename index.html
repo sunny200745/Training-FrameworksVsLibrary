@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Your deck.js Presentation</title>
+
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="deck.js/core/deck.core.css">
+
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="deck.js/extensions/scale/deck.scale.css">
+
+	<!-- Codemirror theme -->
+  <link rel="stylesheet" href="deck.js/extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/lesser-dark.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" href="deck.js/themes/style/dark.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" href="deck.js/themes/transition/cube.css">
+
+  <!-- Google Font -->
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,700' rel='stylesheet' type='text/css'>
+
+  <!-- Required Modernizr file -->
+  <script src="deck.js/modernizr.custom.js"></script>
+  <script src="deck.js/jquery-1.7.2.min.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/knockout-2.2.1.js"></script>
+  <script src="js/knockout.mapping.js"></script>
+
+  <style type="text/css">
+  	.redHighlight{
+  		color:red;
+  	}
+  	.greenHighlight{
+  		color:green !important;
+  	}
+  	.heading{
+  		color:#9932CC !important;
+  	}
+  	.liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
+	.liveExample input { font-family: Arial; }
+	.liveExample b { font-weight: bold; }
+	.liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
+	.liveExample select[multiple] { width: 100%; height: 8em; }
+	.liveExample h2 { margin-top: 0.4em; }
+
+	.ko-grid { margin-bottom: 1em; width: 25em; border: 1px solid silver; background-color:White; }
+	.ko-grid th { text-align:left; background-color: Black; color:White; }
+	.ko-grid td, th { padding: 0.4em; }
+	.ko-grid tr:nth-child(odd) { background-color: #DDD; }
+	.ko-grid-pageLinks { margin-bottom: 1em; }
+	.ko-grid-pageLinks a { padding: 0.5em; }
+	.ko-grid-pageLinks a.selected { background-color: Black; color: White; }
+	.liveExample { height:20em; overflow:auto } /* Mobile Safari reflows pages slowly, so fix the height to avoid the need for reflows */
+  </style>
+</head>
+<body class="deck-container" >
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+  <h1>Javascript Frameworks</h1>
+</section>
+
+<section class="slide">
+  <h2>What this presentation covers</h2>
+  <ul>
+    <li> Major JS Frameworks</li>
+    <li> Overview + Functionality</li>
+    <li> Examples</li>
+    <li> .....& find Yourself :)</li>
+  </ul>
+</section>
+<!-- js intro -->
+<section class="slide">
+  <h2>Little about JS first</h2>
+
+    <ul>
+		<li class="slide">
+			JavaScript® (often shortened to JS) is a lightweight, object-oriented language with <a href="http://en.wikipedia.org/wiki/First-class_function" target="_blank">first-class functions</a> most known as the scripting language for Web pages.
+		</li>
+		<li class="slide">
+			The JavaScript standard is <a href="http://en.wikipedia.org/wiki/ECMAScript" target="_blank">ECMAScript</a>. As of 2012, all modern browsers fully support ECMAScript 5.1. Older browsers support at least ECMAScript 3.
+		</li>
+		<li class="slide">
+			ECMAScript is widely used for client-side scripting on the web, in the form of several well-known implementations such as JavaScript, <a href="http://msdn.microsoft.com/en-us/library/vstudio/72bd815a(v=vs.100).aspx" target="_blank">JScript</a>(Microsoft's version of JS) and <a href="http://www.adobe.com/devnet/actionscript.html" target="_blank">ActionScript</a>(Flash,AIR).
+		</li>
+		<li class="slide">
+			Today, "JavaScript" is a trademark of Oracle Corporation.
+		</li>
+	</ul>
+
+</section>
+
+<!-- frameworks intro -->
+<section class="slide">
+  <h2>Why We Need Frameworks </h2>
+  	<span class="slide"><img src="images/frameworks.png"></span>
+    <ul>
+      <li class="slide"> Creating responsive, fluid, and maintainable interfaces for web apps isn’t as easy as one would imagine
+      </li>
+      <li class="slide"> When data to be sent back to the server,for result parsing, data stores to be updated, views to be re-rendered & so to keep everything synched with background.
+      </li>
+
+      <li class="slide"> The rise in the number of web apps  has really made it apparent that we need better tools and frameworks.
+      </li>
+    </ul>
+</section>
+<section class="slide">
+	<ul>
+		<img src="images/frameworkvslib.png">
+	</ul>
+	<ul>
+		<li><span class="greenHighlight">Libraries</span> :  slot into your existing architecture and add specific functionality</li>
+		<li><span class="greenHighlight">Frameworks </span> :  give you an architecture (file structure, etc.) that you are meant to follow and, if you do, are intended to handle all common requirements</li>
+	</ul>
+	<ul class="slide" style="align-text:center">
+		<i>Differentiation between Libraries and Frameworks</i>
+		<img style="margin-left: 37px;" src="images/frameVSlib.png">
+	</ul>
+	<ul class="slide">
+		<li >Some of the major ones are  <strong><a href="http://javascriptmvc.com/" target="_blank">JavaScriptMVC</a></strong>, <strong><a href="http://documentcloud.github.io/backbone/" target="_blank">Backbone.js</a></strong>, <strong><a href="http://maccman.github.com/spine/" target="_blank">Spine</a></strong>, <strong><a href="http://sammyjs.org/" target="_blank">Sammy</a></strong>, <strong><a href="http://knockoutjs.com/" target="_blank">Knockout</a></strong>, <strong><a href="http://angularjs.org/#/" target="_blank">Angular</a></strong>
+	    </li>
+
+	   <li> In details will explain
+	   		<span class="greenHighlight">JavaScriptMVC</span> ,
+	   		<span class="greenHighlight">Backbone.js</span> ,
+	   		<span class="greenHighlight">Knockout.js</span> ,
+	   		<span class="greenHighlight">Angular.js</span>
+	   	</li>
+   </ul>
+</section>
+<!-- JMVC -->
+	<section class="slide">
+		<div style="float: left;width: 700px;;margin-left: 150px;">
+		 	<span style="float: left;font-weight: bold;font-size: 30px;">JMVC(aka</span>
+				<img style="float: left;margin-left: 5px;margin-top: -4px;" src="images/jmvcLogo.png">
+			<span style="margin-left: 5px;">)</span>
+		</div>
+
+	    <ul style="float:left">
+
+	    	<li>JavaScriptMVC is an open-source framework containing the best ideas in jQuery development.	It supports every browser that jQuery supports.
+	    	</li>
+
+	    	<li>JMVC's goodies are broken down into four sub-projects
+	    		<ul>
+		      		<li><a href="http://javascriptmvc.com/docs/jquerypp.html" target="_blank">jQuery++</a> - A collection of useful DOM helpers and special events for jQuery
+		      		</li>
+
+		      		<li><a href="http://javascriptmvc.com/docs/stealjs.html" target="_blank">StealJS</a> - JavaScript and CSS dependency management and build tools
+		      		</li>
+
+		      		<li><a href="http://javascriptmvc.com/docs/FuncUnit.html" target="_blank">FuncUnit</a> - Functional and unit testing framework
+		      		</li>
+
+		      		<li><a href="http://javascriptmvc.com/docs/DocumentJS.html" target="_blank">DocumentJS</a> - Documentation engine
+		      		</li>
+	      		</ul>
+	     	</li>
+	    </ul>
+	</section>
+
+	<section class="slide">
+	  	<div style="float: left;width: 700px;;margin-left: 150px;">
+		  <span style="float: left;font: 40px arial;">StealJS</span>
+		  <img style="float:left;margin-top:-69px" src="images/steal1.jpg">
+		</div>
+
+	    <ul style="float:left">
+	    	<li> StealJS is a collection of command line and JavaScript client utilities that make   		building, packaging, and sharing JavaScript applications easy.
+	    	</li>
+
+	      	<li>Dependency management (steal),steal loads modules into your app. Features:
+		      	<ul>
+					<li>Loads JS, CSS, Less, CoffeeScript, and client-side templates.</li>
+					<li>Parallel loading.</li>
+					<li>Works with scripts that don't use steal</li>
+		      	</ul>
+		    </li>
+		    <li> Inculdes various like
+		      	<ul>
+		      		<li><a href="http://javascriptmvc.com/docs/steal.build.html" target="_blank">steal.build</a> - combines and minfies an application (or application's) resources into a small number of minified packages for faster downloading
+		      		</li>
+
+		      		<li><a href="http://javascriptmvc.com/docs/steal.dev.html" target="_blank"> steal.dev</a> - logs messages cross browser. Messages are removed in production builds
+		      		</li>
+
+		      		<li><a href="http://javascriptmvc.com/docs/steal.generate.html" target="_blank">steal.generate</a> -makes building code generators extremely easy. Features
+		      		</li>
+
+		      		<li><a href="http://javascriptmvc.com/docs/steal.clean.html" target="_blank">steal.clean </a> - cleans your code and checks it against JSLint
+		      		</li>
+		      	</ul>
+		    </li>
+	    </ul>
+	</section>
+
+	<section class="slide">
+	  	<div style="float:left;width:700px;margin-left: 150px;">
+		  <h3 style="float:left">JQuery++(Plus Plus)</h3>
+		  <img style="float:left;margin-left:10px" src="images/jquerypp.jpg">
+		</div>
+
+	    <ul style="float:left">
+		    <li> jQuery++ is a collection of useful jQuery libraries that provide the missing functionality necessary to implement and organize large-scale jQuery applications.
+		    </li>
+
+	      	<li><span class="redHighlight">DOM Helpers</span>
+		      	<ul>
+					DOM helpers extend jQuery with extra functionality for manipulating the DOM. For example, [dimensions] lets you set the outer width and height of elements like:
+		      	</ul>
+	      	</li>
+
+	        <li> jQuery++ comes with the following <span class="redHighlight">DOM helper plugins</span>:
+		  		<ul>
+					<li>Animate - Let jQuery use CSS animations.</li>
+					<li>Cookie - Set and get cookie values.</li>
+					<li>Styles - Get multiple css properties quickly. and few more</li>
+
+				</ul>
+		    </li>
+			<li><span class="redHighlight">Special Events like</span>:
+				<ul>
+					<li>Destroyed - when an element removed from the page.</li>
+					<li>Drag - Delegatable drag events.</li>
+					<li>Hover - Delegatable hover events. & few more</li>
+				</ul>
+			</li>
+			<li><span class="redHighlight">Utilities</li>
+				<ul><li>Vector - vector math</li></ul>
+			</li>
+
+	</section>
+
+	<section class="slide">
+
+	  	<div style="float:left;width:700px;margin-left: 150px;">
+		  <h3 style="float:left">FuncUnit</h3>
+		  <img style="float:left;margin-left:10px;margin-top: -16px;" src="images/funcunit.jpg">
+		</div>
+
+	    <ul style="float:left">
+      		<li> FuncUnit tests web applications with a simple jQuery-like syntax. Via integration with Selenium and PhantomJS, you can run the same tests automated.
+      		</li>
+
+	    	<li>FuncUnit uses QUnit for organizing tests and assertions. But FuncUnit extends QUnit so you can:
+				<ul>
+					<li>Open a web page</li>
+					<li>Query for elements</li>
+					<li>Simulate a user action</li>
+					<li>Wait for a condition to be true</li>
+					<li>Get information about your page and run assertions</li>
+		      	</ul>
+		    </li>
+
+
+	    	<li> The <a href="http://javascriptmvc.com/docs/funcunit.getstarted.html" target="_blank">FuncUnit Getting Started</a> guide is a quick walkthrough of creating and running a test.
+	    	</li>
+	</section>
+
+	<section class="slide">
+
+	  	<div style="float:left;width:700px;margin-left: 150px;">
+		  <h3 style="float:left;margin-top: 20px;">DocumentJS</h3>
+		  <img style="float:left;margin-left:10px;margin-top: -40px;" src="images/document.jpg">
+		</div>
+
+	    <ul style="float:left">
+	    	<li> DocumentJS makes it easy to produce beautiful and useful documentation for your JavaScript project.
+	    	</li>
+
+	    	<li>Features
+				<ul>
+					<li>Flexible organization of your documentation</li>
+					<li>An integrated documentation viewer where you can search your API</li>
+					<li>Markdown support</li>
+					<li>An extensible architecture</li>
+
+		      	</ul>
+		    </li>
+
+	    	<li>Can  go to the <a href="http://javascriptmvc.com/docs/DocumentJS.html" target="_blank">DocumentJS</a> documentation
+	    	</li>
+
+	</section>
+	<section class="slide" id="slide">
+		<h2>JMVC Architecture </h2>
+		<img src="images/todo_arch.png" alt="JMVC Architecture">
+		<pre>Architecture view of JMVC via TODO example</pre>
+
+	</section>
+
+	<section class="slide" id="slide">
+		<h2>Lets see an example in</h2>
+		<a href="http://localhost/JS/sampleProjects/jsFramePPT/demo/jmvc/cookbook/index.html" target="_blank"><img src="images/open.gif" alt="JMVC Example"></a>
+
+	</section>
+<!-- JMVC END -->
+
+<!-- Backbone -->
+	<section class="slide">
+	   <img src="images/backboneLogo.png">
+
+	    <ul>
+	      <li> Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.
+
+	      <li>Backbone's only dependency is Underscore.js . For RESTful persistence, history support via Backbone.Router
+	      	<ul>
+	      		<li><span class="greenHighlight">Underscore.js</span>
+		      		<ul>
+		      			<li><a href="http://underscorejs.org/" target="_blank">Underscore</a> is a utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby)</li>
+		      		</ul>
+		      	</li>
+		      	<li><span class="greenHighlight">Backbone.Router</span>
+		      		<ul>
+		      			<li><a href="http://documentcloud.github.io/backbone/#Router" target="_blank">Router</a>  Backbone.Router provides methods for routing client-side pages, and connecting them to actions and events</li>
+		      		</ul>
+		      	</li>
+	      	</ul>
+
+	    </ul>
+	</section>
+
+	<section class="slide">
+	  <h2>Introduction</h2>
+
+	    <ul>
+	      <li> When working on a web application that involves a lot of JavaScript, one of the first things you learn is to stop tying your data to the DOM.
+
+	      <li>For rich client-side applications, a more structured approach is often helpful
+
+	      <li>With Backbone, you represent your data as Models, which can be created, validated, destroyed, and saved to the server
+	      	<br/><br/>
+	      	<img src="images/backbone1.png" alt="Backbone Architecture">
+	      	<pre>Architectural view of Backbone</pre>
+
+
+
+
+	    </ul>
+	</section>
+
+	<section class="slide">
+
+	  	<div style="float:left;width:700px;margin-left: 150px;">
+		  <h3 style="float:left">Backbone</h3>
+		  <img style="float:left;margin-left:10px;margin-top:-55px" src="images/events copy.png">
+		</div>
+
+	    <ul style="float:left">
+	      <li> Events is a module that can be mixed in to any object, giving the object the ability to bind and trigger custom named events. Events do not have to be declared before they are bound, and may take passed arguments
+
+	    <br/> <br/>
+
+		<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="Backbone,_">
+var object = {};
+_.extend(object, Backbone.Events);
+
+object.on("alert", function(msg) {
+  console.log("Triggered " + msg)
+});
+
+object.trigger("alert", "an event");
+
+		</textarea>
+		<li>List of Events can be viewed at <a href="http://documentcloud.github.io/backbone/#Events" target="_blank">Backbone Events</a>
+	    </ul>
+	</section>
+
+
+	<section class="slide">
+	  <h2>Backbone.Model</h2>
+
+	    <ul>
+	      <li> Models are the heart of any JavaScript application, containing the interactive data as well as a large part of the logic surrounding it: conversions, validations, computed properties, and access control. You extend Backbone.Model with your domain-specific methods, and Model provides a basic set of functionality for managing changes
+
+	    <br/> <br/>
+	    <h3 id="colorToBeChange">Hi My color gonna change soon !!</h3>
+		<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="Backbone,_,$">
+var Sidebar = Backbone.Model.extend({
+  promptColor: function() {
+    var cssColor = prompt("Please enter a CSS color:");
+    this.set({color: cssColor});
+  }
+});
+
+window.sidebar = new Sidebar;
+
+sidebar.on('change:color', function(model, color) {
+  $('#colorToBeChange').css({background: color});
+});
+
+sidebar.set({color: 'white'});
+
+sidebar.promptColor();
+
+		</textarea>
+		<li>List of Model props can be viewed at <a href="http://documentcloud.github.io/backbone/#Model" target="_blank">Backbone Model</a>
+	    </ul>
+	</section>
+
+	<section class="slide">
+	  <img src="images/collection1.png">
+
+	    <ul>
+	      <li> Collections are ordered sets of models. You can bind "change" events to be notified when any model in the collection has been modified, listen for "add" and "remove" events, fetch the collection from the server, and use a full suite of Underscore.js methods
+
+	      <li>Any event that is triggered on a model in a collection will also be triggered on the collection directly, for convenience. This allows you to listen for changes to specific attributes in any model in a collection, for example: documents.on("change:selected", ...)
+	      	<br/><br/>
+	      	<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="Backbone,_,$">
+var Library = Backbone.Collection.extend({
+
+	model: function(attrs, options) {
+		if (condition) {
+			return new PublicDocument(attrs, options);
+		} else {
+			return new PrivateDocument(attrs, options);
+		}
+	}
+});
+    </textarea>
+
+		  <li>List of Collections props/functions can be viewed at <a href="http://documentcloud.github.io/backbone/#Collection" target="_blank">Backbone Collection</a>
+	    </ul>
+	</section>
+
+
+
+	<section class="slide">
+	  <h2>Backbone.View</h2>
+
+	    <ul>
+	      <li> Backbone views are almost more convention than they are code — they don't determine anything about your HTML or CSS for you, and can be used with any JavaScript templating library.
+
+	      <li>The general idea is to organize your interface into logical views, backed by models, each of which can be updated independently when the model changes, without having to redraw the page
+
+	      	<br/><br/>
+	      	<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="Backbone,_,$">
+var DocumentRow = Backbone.View.extend({
+events: {
+    //specify events
+  },
+
+  initialize: function() {
+    //initialization
+  },
+
+  render: function() {
+    alert('View Rendering...');
+  }
+
+});
+var d = new DocumentRow;
+d.render();
+    </textarea>
+
+		  <li>List of Model props can be viewed at <a href="http://documentcloud.github.io/backbone/#View" target="_blank">Backbone View</a>
+	    </ul>
+	</section>
+
+	<!-- <section class="slide" id="slide">
+		<h2>Lets Open Backbone </h2>
+		<a href="url to backbone app" target="_blank"><img src="images/backboneEx.gif" alt="Backbone Example"></a>
+
+		<ul>
+			<li class="slide" >
+				<h2>Example</h2>
+			</li>
+		</ul>
+	</section> -->
+
+<!-- Backbone end -->
+
+
+<!-- Knockout -->
+	<section class="slide">
+	  	<img src="images/kologo.png">
+
+	    <ul>
+	    	<li> Knockout is a standalone JavaScript implementation of the Model-View-ViewModel pattern with templates.
+	    	</li>
+	    	<li>Knockout is bulit on the top of MVVM patterns and View Models</li>
+	    	<li>Features</li>
+	    </ul>
+	    <span class="slide" style="float:left"><img src="images/declarative-bindings.png" alt="Declartive Binding">Declarative Binding</span>
+	    <span class="slide" style="float:left ; margin-top:35px" ><img src="images/automatic-refreshing.png" alt="Auto RefreshUI">Auto Refresh UI</span>
+	    <span class="slide" style="float:left ; margin-top:75px"><img src="images/dependency-tracking.png" alt="Dependency Tracking">Dependency Tracking</span>
+	    <span class="slide" style="float:left ; margin-top:120px"><img src="images/templating.png" alt="Templating">Templating</span>
+	</section>
+
+	<section class="slide">
+	  <h3>MVVM and View Models</h3>
+	  	<img class="slide" height="300px" src="images/mvvm.png" alt="MVVM">
+
+	    <ul>
+	    	<li class="slide">Model-View-View Model (MVVM) is a design pattern for building user interfaces</li>
+
+		    <li class="slide">It  splits potentially sophisticated UI  into three parts:
+		      	<ul>
+		      		<li><span class="redHighlight">Model:</span> Application’s data storage</li>
+		      		<li><span class="redHighlight">View Model:</span> A pure-code representation of the data and operations on a UI</li>
+		      		<li><span class="redHighlight">View:</span> Interactive UI representing the state of the view model</li>
+		      	</ul>
+		    </li>
+	    </ul>
+	</section>
+
+	<section class="slide">
+	  <h3>...contd</h3>
+	  	<ul>
+	      <li class="slide">To create a view model with KO  just declare any JavaScript object; like</li>
+	    <div class="slide">
+	    <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" globals="$,ko">
+//a viewmodel with observables
+var myViewModel = {
+    personName: ko.observable('Bob'),
+    personAge: ko.observable(123)
+};
+	    </textarea>
+	    </div>
+	    <li class="slide"> To Activate KO</li>
+	      <img  class="slide" height="300px" src="images/ko.gif" alt="MVVM">
+	      <span class="slide">Not that difficult to start/activate ; simply</span>
+	     <div class="slide">
+	      <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" globals="$,ko">
+//This activates the knockout
+ko.applyBindings(myViewModel);
+	      </textarea>
+		</div>
+
+	</section>
+
+
+	<section class="slide">
+	  <h2>Features in Details</h2>
+
+	    <ul>
+	      <li> <span class="redHighlight">Declarative bindings</span> - Easily associate DOM elements with model data using a concise, readable syntax.
+
+
+	    </ul>
+	    <pre>Sample showing how binding done in html</pre>
+	    <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" globals="$,ko">
+First name: <input data-bind="value: firstName" />
+Last name: <input data-bind="value: lastName" />
+Hello, <span data-bind="text: fullName"> </span>
+	    </textarea>
+	    <br/>
+	    <ul>
+	    	<li>To achive complex UI, uses custom bindings for the desired result,will see something in example
+	    </ul>
+
+	</section>
+
+	<section class="slide" id="uiRefresh" >
+	    <ul>
+	      <li> <span class="redHighlight">Auto Refresh UI</span> - When your data model's state changes, your UI updates automatically.
+	    </ul>
+
+	    <input type="text" placeholder="Write to see Updation" data-bind="value: Name, valueUpdate: 'afterkeydown'"></input>
+
+	    <br/><br/>
+	   <pre><span class="slide" ><img src="images/changeUI.gif" alt="AutoUI"></span> <span data-bind="text: Name"></span></pre>
+
+
+
+    <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="$,ko">
+
+function ViewModel() {
+    this.Name = ko.observable("");
+}
+
+
+ko.applyBindings(new ViewModel(),$("#uiRefresh")[0]);
+
+
+	</textarea>
+    </section>
+
+	<section class="slide" id="tracking" data-bind="stopBinding:true">
+	    <ul>
+	      <li> <span class="redHighlight">Dependency Tracking</span> - Implicitly set up chains of relationships between model data, to transform and combine it.
+	    </ul>
+
+	    <p><span class="greenHighlight">Full Name Entered is:</span> <span data-bind="text: fullName"></span></p>
+
+		<span style="float:left"><input placeholder="Enter FirstName" data-bind="value: firstName, valueUpdate: 'afterkeydown'"/></span>
+		<span style="padding:22px"><input placeholder="Enter LastName" data-bind="value: lastName"/></span>
+		<br/><br/>
+
+    <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="$,ko">
+
+function MyViewModel() {
+    this.firstName = ko.observable('');
+    this.lastName = ko.observable('');
+
+    this.fullName = ko.computed({
+        read: function () {
+            return this.firstName() + " " + this.lastName();
+        },
+        write: function (value) {
+            var lastSpacePos = value.lastIndexOf(" ");
+            if (lastSpacePos > 0) {
+                this.firstName(value.substring(0, lastSpacePos));
+                this.lastName(value.substring(lastSpacePos + 1));
+            }
+        },
+        owner: this
+    });
+}
+
+ko.applyBindings(new MyViewModel(),$("#tracking")[0]);
+	</textarea>
+
+
+
+	</section>
+
+	<section class="slide" >
+	  <span class="slide" ><img src="images/introEnd.gif" alt="AutoUI"></span> <span data-bind="text: Name"></span>
+
+	    <ul>
+	      <li class="slide"><span class="redHighlight">Observables</span> special JavaScript objects that can notify subscribers about changes, and can automatically detect dependencies</li>
+	      <div class="slide">
+	      <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="$,ko">
+var myViewModel = {
+    personName: ko.observable('Bob'),//personName as observable
+    personAge: ko.observable(123)
+}
+	    </textarea>
+		</div>
+
+	      <li class="slide"><span class="redHighlight">Bindings</span> Various kind of binding available, can visit <a href="http://knockoutjs.com/documentation/index.html" target="_blank">here</a></li>
+	      <div class="slide" id="bindingExample">
+	      	<div data-bind="visible: shouldShowMessage">
+			   Message visible only when "shouldShowMessage" holds a true value.
+			</div>
+	      <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true" globals="$,ko">
+//Visible Binding Example
+var viewModel = {
+        shouldShowMessage: ko.observable(true) // Message initially visible
+    };
+viewModel.shouldShowMessage(false);
+//viewModel.shouldShowMessage(true);
+
+
+ko.applyBindings(viewModel,$("#bindingExample")[0]);
+	    </textarea>
+		</div>
+	    </ul>
+	</section>
+
+
+	<section class="slide" >
+	  	<h2>...contd</h2>
+	    <ul>
+	      <li>KO is all about two way bindings with MVVM patterns </li>
+	      <li>For more KO stuff , you can visit <a href="http://knockoutjs.com/documentation/introduction.html" target="_blank"> Official KO page</a> </li>
+	      <li>For examples visit ko <a href="http://knockoutjs.com/examples/" target="_blank"> Examples</a> page</li> and for documentation visit <a href="http://knockoutjs.com/documentation/introduction.html" target="_blank"> docs</a> page
+	    </ul>
+	    <br/><br/>
+	     <span class="slide" ><img src="images/koEnd.gif" alt="AutoUI"></span>
+
+
+	</section>
+<!-- Knockout end -->
+
+<!-- Angular -->
+	<section class="slide">
+	  	<img src="images/angularLogo.png">
+
+	    <ul>
+	    	<li class="slide"> Before i kickstart Angular js let me throw some light on these
+	    	</li>
+	    </ul>
+	    <span class="slide" style="float:left"><img src="images/yoman.png" >Yeoman</span>
+	    <span class="slide" style="float:left ; margin-top:85px" ><img src="images/Grunt.png">Grunt</span>
+	    <span class="slide" style="float:left ; margin-top:50px"><img src="images/bower.png" >Bower</span>
+
+	</section>
+
+	<section class="slide">
+		<h3>Modern Workflow For Modern Webapps</h3>
+		<ul>
+			<li><a href="https://github.com/yeoman/yo" target="_blank">Yo</a> : scaffolds out a new application, writing your Grunt configuration and pulling in relevant Grunt tasks that you might need for your build.
+			</li>
+			<li><a href="http://gruntjs.com/" target="_blank">Grunt</a> :  is used to build, preview and test your project.
+			</li>
+			<li><a href="http://bower.io/" target="_blank">Bower</a> : is used for dependency management, so that you no longer have to manually download and manage your scripts.
+			</li>
+		</ul>
+		<ul class="slide">
+			<li>A complete <a href="https://github.com/yeoman/yeoman/wiki/Getting-Started" target="_blank">getting started</a> guide is available but for those looking to get up and running quickly, make sure you have installed <a href="http://nodejs.org/" target="_blank">Node.js</a>, <a href="http://git-scm.org/" target="_blank">Git</a> .
+			</li>
+			<li>
+				For packaged ready app all these things should be configured before u start the project,as it reduces a lot manual burden of a being.
+			</li>
+			<li>Lets start Angular now </li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h3>Introduction</h3>
+		<ul>
+			<li>AngularJS is a MVC framework that defines numerous concepts to properly organize your web application.
+			</li>
+			<li>It enhances HTML by attaching <span class="greenHighlight">directives</span> to your pages with new attributes or tags and expressions in order to define very powerful templates directly in your HTML.
+			</li>
+			<li>It also encapsulates the behavior of your application in controllers with the help of <span class="greenHighlight">dependency injection</span>.
+			</li>
+			<li>Finally, utility code can easily be factorized into <span class="greenHighlight">services</span> that can be injected in your controllers
+			</li>
+		</ul>
+		<ul class="slide">
+			<li style="float:left">
+				<div style="float:left">
+					<a href="http://docs.angularjs.org/guide/expression" target="_blank">
+						<img style="float:left" src="images/expression.png">
+					</a>
+				</div> :  In order to create the views of your application, AngularJS let you execute expressions directly within your HTML pages.
+			</li>
+			 <textarea id="code" name="code" class="code" mode="javascript" style="display: none;">
+<div class="container">
+name size is:{{1+2}}// as here expression is  2+1
+	      //which gets computed to 3
+</div>
+		    </textarea>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h3>....contd</h3>
+		<ul>
+			<li> <a href="http://docs.angularjs.org/guide/directive" target="_blank">Directives</a> :  are one of the most powerful feature of AngularJS.
+			</li>
+			<li>They allow you to extend HTML to answer the needs of web applications. Directives let you specify how your page should be structured for the data available in a given scope
+			</li>
+			<br/><br/>
+			 <textarea id="code" name="code" class="code" mode="javascript" style="display: none;">
+ <div id="door" data-id="{{security.id}}" class="doors" ng-repeat="security in securities" ng-click="routeTo('securityDetails', $index)">
+     <span style="float:left;width: 180px;">
+        <span class="part1">
+          <img style="height:53px;" ng-src="images/{{security.typeOfState}}-{{security.stateDesc.toLowerCase()}}.png" alt="{{security.typeOfState}}">
+
+          <span ng-class="{'true':'status-open', 'false':'status-closed'}[security.points[0].point[1].text]">{{security.stateDesc}}</span>
+
+          <span style="float: left;background: #1b1a20;width: 180px;">
+            <h4>{{security.name}}</h4>
+          </span>
+        </span>
+      </span>
+  </div>
+		    </textarea>
+
+		</ul>
+
+	</section>
+
+	<section class="slide">
+		<ul>
+			<img src="images/output copy.png">
+		</ul>
+		<img class="slide" src="images/directiveOutput.png">
+	</section>
+
+	<section class="slide">
+		<h3>....contd</h3>
+		<ul>
+			<li> <a href="http://docs.angularjs.org/guide/dev_guide.templates.databinding" target="_blank">Data Binding</a> : Data-binding in Angular web apps is the automatic synchronization of data between the model and view components
+			</li>
+			<br/><br/>
+			<img src="images/dataBind.png">
+			<li>
+				They are different because first the template (which is the uncompiled HTML along with any additional markup or directives) is compiled on the browser, and then, the compilation step produces a live view.
+			</li>
+		</ul>
+
+	</section>
+
+	<section class="slide">
+		<h3>....contd</h3>
+		<ul>
+			<li> <a href="http://docs.angularjs.org/guide/dev_guide.templates.filters.using_filters" target="_blank">Filters</a> : Filters typically used to format expressions in bindings in your templates
+			</li>
+		</ul>
+		<ul>
+
+			<textarea id="code" name="code" class="code" mode="javascript" style="display: none;">
+<div id="light" ng-repeat="light in lights | filter:{'mediaType': 'instance/lightSwitch'}" >
+
+  <span ng-click="toggleBulb(light)" class="part1">
+    <span class="text-toogle">SELECT TO TOGGLE </span>
+  </span>
+  <span style="float: left;background: #1b1a20;width: 270px;">
+    <h4>Non-dimming Light</h4>
+  </span>
+
+</div>
+		    </textarea>
+		</ul>
+
+
+	</section>
+
+	<section class="slide">
+		<h3>A Live Demo Example would be fair enough for better understanding</h3>
+		<br/><br/>
+		<ul class="slide">
+			<img  src="images/toolset.png">
+			<br/><br/>
+			where i'll be using yo together with grunt n bower to show the demo, so sit back n enjoy :)
+			<a href="http://localhost/JS/sampleProjects/jsFramePPT/demo/angular" target="_target"><img src="images/arrow.png"></a>
+		</ul>
+
+
+	</section>
+
+	<section class="slide">
+		<img src="images/wrapUp.png">
+		<br/><br/>
+		<ul class="slide">
+			<li class="greenHighlight">Features:</li>
+			<img src="images/featuresDiff.png">
+
+			<li class="greenHighlight">Size:</li>
+			<img style="float: left;margin-left: 157px;" src="images/sizeDiff.png" target="_blank">
+		</ul><br/><br/>
+		<ul style="float:left" class="slide">
+			lot more are there, comming up is the difference table....
+		</ul>
+	</section>
+
+	<section class="slide">
+		<img src="images/diffTable.png">
+		<br/><br/>
+		<ul class="slide">
+			<img src="images/table.png">
+		</ul>
+
+	</section>
+	<section class="slide">
+		<img style="margin-left:380px"src="images/ques.jpg">
+
+		<div style="float:left">
+			<img src="images/ques2.gif">
+		</div>
+		<div style="float: left;margin-top: 133px;">
+			<img src="images/quesText.png">
+		</div>
+		<div style="float: right;margin-top: -243px;margin-right: -246px;">
+			<img src="images/ques2.gif">
+		</div>
+
+	</section>
+
+	<section class="slide">
+
+		<div style="float:left">
+			<img src="images/thank.gif">
+		</div>
+
+		<div style="float:left">
+			<img src="images/thanku.png">
+		</div>
+
+
+
+		<div style="float: right;margin-top: -17px;margin-right: -125px;">
+			<img src="images/contact-us.png">
+		</div>
+
+	</section>
+
+<!-- end Angular -->
+<!-- helpers for me -->
+<!-- <section class="slide">
+  <h2>Core Syntax</h2>
+  <div>
+    <ul>
+      <li> Functions
+    </ul>
+  </div>
+  <div>
+    <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+		function foo (name) {
+		  console.log("Hello " + name);
+		}
+		foo("Anon Amos");
+    </textarea>
+
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2>Core Syntax</h2>
+  <div>
+    <ul>
+      <li> Functions
+    </ul>
+  </div>
+  <div>
+    <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+		function foo (name) {
+		  console.log("Hello " + name);
+		}
+		foo("Anon Amos");
+    </textarea>
+  </div>
+</section>
+
+<section class="slide">
+    <h2>Example No.2</h2>
+	<h2>Todo List</h2>
+	<div ng-controller="TodoCTRL">
+
+		<span>{{remaining()}} of {{todos.length}} remaining</span><br/>
+		<span> Click button to hide the completed task
+			<input type="button" ng-click="hideCompletedTasks()" value="click">
+		</span>
+		<ul class="unstyled">
+
+			<li  ng-repeat="val in todos">
+			  <input type="checkbox" ng-model="val.complete">
+			  <span class="done-{{val.complete}}">{{val.text}}</span>
+			</li>
+		</ul>
+
+		<form ng-submit="onCLickAdd()">
+			<input type="text" ng-model="textFromIputBox" placeholder="Enter TODO here">
+			<input class="btn-primary" type="submit" value="add">
+		</form>
+	</div>
+
+    	<script>
+
+
+		function TodoCTRL($scope){
+			$scope.todos = [];
+
+			$scope.onCLickAdd = function() {
+				$scope.todos.push({text:$scope.textFromIputBox,complete:false});
+				$scope.textFromIputBox = '';
+			}
+			$scope.remaining = function() {
+				var count = 0;
+				angular.forEach($scope.todos,function(val){
+					count += val.complete ?0:1;
+				});
+				return count;
+			}
+			$scope.hideCompletedTasks = function(){
+				var temp = [];
+				angular.forEach($scope.todos,function(val){
+					if(!val.complete)
+					{
+						temp.push(val)
+					}
+				});
+				$scope.todos = temp;
+			}
+		}
+
+
+		</script>
+
+</section>
+
+<section class="slide">
+	<h2>Example No.2</h2>
+  <ul>
+		<li class="slide" id="extensions-goto">
+			<strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
+		</li>
+
+		<li class="slide" id="extensions-hash">
+			<strong>deck.hash</strong>: Enables internal linking within slides, deep linking to individual slides, and updates the address bar &amp; a permalink anchor with each slide&nbsp;change.
+		</li>
+
+		<li class="slide" id="extensions-menu">
+			<strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the deck to switch between&nbsp;views.
+		</li>
+
+		<li class="slide" id="extensions-navigation">
+			<strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
+		</li>
+
+		<li class="slide" id="extensions-status">
+			<strong>deck.status</strong>: Adds a page number indicator. (current/total)
+		</li>
+
+		<li class="slide" id="extensions-scale">
+			<strong>deck.scale</strong>: Scales each slide to fit within the deck container using CSS Transforms for those browsers that support them.
+		</li>
+	</ul>
+</section> -->
+
+
+<!-- End slides. -->
+
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+
+<script src="deck.js/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+
+
+<!-- Base codemiror code -->
+<script src="deck.js/extensions/codemirror/codemirror.js"></script>
+<!-- javascript mode -->
+<script src="deck.js/extensions/codemirror/mode/javascript/javascript.js"></script>
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<!-- <script src="../deck.js/extensions/codemirror/mode/xml/xml.js"></script>
+<script src="../deck.js/extensions/codemirror/mode/css/css.js"></script>
+<script src="../deck.js/extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script> -->
+<!-- Plugin code -->
+<script src="deck.js/extensions/codemirror/deck.codemirror.js"></script>
+<script src="js/angular.js"></script>
+
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
